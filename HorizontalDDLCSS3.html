@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+<title>Official Website Of Advanced Web Technologies</title>
+<meta charset ="utf-8" />
+<meta name="author" content="Tsegaye Beka Ture" />
+ <title>jQuery UI Menu - Default functionality</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script>
+    $(function() {
+        $( "#menu" ).menu();
+    });
+    </script>
+    <style>
+    .ui-menu { width: 16000px; }
+    </style>
+    <style>
+    #accordion-resizer {
+        padding: 100px;
+        width: 100px;
+        height: 1000px;
+		margin-left:10000px;
+		margin-top: 10000px;
+    }
+    </style>
+    <script>
+    $(function() {
+        $( "#accordion" ).accordion({
+            heightStyle: "fill"
+        });
+    });
+    $(function() {
+        $( "#accordion-resizer" ).resizable({
+            minHeight: 2000,
+            minWidth: 2000,
+            resize: function() {
+                $( "#accordion" ).accordion( "refresh" );
+            }
+        });
+    });
+    </script>
+<!--Internal CSS-->
+<style>
+* {
+padding: 0px;
+margin: 0px;    
+    }
+body {
+font-family: Verdana, Tahoma,Arial,Helvetic,sans-serif;
+background-color: #CCCCCC;
+padding: 0px;
+margin-left: 0px;
+margin-right: 0px;
+background: #b6b7bc;
+font-size: .80em;
+font: Garamond;
+color: #696969;
+    }
+h1 {
+text-align: center;
+margin-bottom: 0px;
+color: #666BCC;
+font-size: 1.6em;
+padding-bottom: 0px;
+}
+h2 {
+text-align: left;
+border-bottom: 2px solid;
+margin-bottom: 0px;
+color: gray;
+font-size: 1.5em;
+font-weight: 600;
+}
+h3{
+text-align: right;
+margin-bottom: 0px;
+margin-top: 2px;
+color: gray;
+font-size: 1.2em;
+}
+h4{
+text-align: left;
+margin-bottom: 0px;
+margin-top: 2px;
+color: orange;
+font: bold 24px;
+}
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+h5, h6
+{
+    font-size: 1em;
+}
+ul#NavMenu,ul.sub1,ul.sub2 {
+list-style-type: none;
+font-size: 9pt;
+outline: 1px;
+color: orange;
+}
+ul#NavMenu li {
+width: 193px;
+text-align: center;
+position: relative;
+float: left;
+margin-right: 0px;
+margin-left: 0px;
+background-colour: orange;
+padding: 1px;
+color: green;
+    }
+ul#NavMenu a {
+text-decoration: none;
+display: block;
+width: 193px;
+height: 25px;
+line-height:25px;
+background-color:#FFF;
+border: 1px solid #CCC;
+border-radius:5px;
+-moz-border-radius:5px;
+}
+ul#NavMenu.sub1 li{
+border: 1px solid green;
+}
+ul#NavMenu.sub1 a{
+margin-top: 5px;
+}
+ul#NavMenu.sub2 a{
+margin-left: 10px;
+}
+ul#NavMenu li:hover>a{
+background-color: green;
+}
+ul#NavMenu li:hover a:hover{
+background-color: orange;
+}
+ul#NavMenu ul.sub1{
+display: none;
+position: absolute;
+top: 26px;
+left: 0px;
+}
+ul#NavMenu ul.sub2{
+display: none;
+position: absolute;
+top: 5px;
+left: 194px;
+}
+ul#NavMenu li:hover .sub1{
+display: block;
+}
+ul#NavMenu .sub1 li:hover .sub2{
+display: block;
+}
+.darrow{
+font-size: 13pt;
+position: absolute;
+top: 6px;
+right: 4px;
+}
+.rarrow{
+font-size: 11pt;
+position: absolute;
+top: 5px;
+right: 6px;
+}
+.tsegesh{
+
+}
+
+a:link, a:visited
+{
+    color: #034af3;
+}
+
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page
+{
+    width: 960px;
+    background-color: #ffffff;
+    margin: 20px auto 0px auto;
+    border: 1px solid #496077;
+}
+
+.header
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: #FFFFFF;
+    width: 100%;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #000000;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+.main
+{
+    padding: 0px 12px;
+    margin: 12px 8px 8px 8px;
+    min-height: 420px;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    margin: 2px 5px 2px 5px;
+    background: #4b6c9e;
+    width:99%;
+}
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+    background: #4b6c9e;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #465c71;
+    border: 1px #4e667d solid;
+    color: #dde4ec;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #bfcbd6;
+    color: #465c71;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #465c71;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.logo
+{
+    float: left;
+    margin: 10px 10px 10px 10px;
+}
+
+.title
+{
+    display: block;
+    margin-left: 100px;
+    margin-top: 30px;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: Black;
+}
+
+.loginDisplay a:link
+{
+    color: Black;
+}
+
+.loginDisplay a:visited
+{
+    color: gray;
+}
+
+.loginDisplay a:hover
+{
+    color: red;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+#pBLDropdown
+{
+    float: left;
+}
+
+#pBLDropdownSubmit
+{
+    float: left;
+    margin-left: 5px;
+}
+
+div.productBacklog
+{
+    clear: both;
+    margin-top: 50px;    
+}
+
+table.productBacklog
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 2px;
+}
+
+<!--ul.sub1 li{
+}
+ul.sub2 li{
+}
+ul#NavMenu li a {
+    }
+ul.sub1 li a {
+    }
+ul.sub2 li a {
+    }
+ul#NavMenu li a:hover {
+    }
+ul.sub1 li a:hover {
+    }-->
+</style>
+</head>
+<body>
+<div id="top_header">
+<header class="top_header">
+<img id="Haaga-Helia_Logo" src="haagahelia_logo.jpg" alt="Haaga-Helia Logo">
+<h1>Welcome to Advanced Web Technologies Course</h1>
+</br>
+<h3><em>Designed By Tsegaye Beka Ture,December,2012</em></h3>
+<h2><strong>Navigation Menu</strong></h2>
+</header>
+</div>
+<div>
+<asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Admin.aspx" Text="Scrum Master" Value="Scrum Master"/>
+                        <asp:MenuItem Text="Product Owner" Value="Product Owner"></asp:MenuItem>
+                        <asp:MenuItem Text="Development Team" Value="Development Team"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Sample.aspx" Text="Task List" Value="Task List"/>
+                        <asp:MenuItem Text="Sprint Task List" Value="Sprint Task List" NavigateUrl="~/Product.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Project" Value="Project" NavigateUrl="~/Bin.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Sprint BackLog" Value="Sprint BackLog"></asp:MenuItem>
+                        <asp:MenuItem Text="Product BackLog" Value="Product BackLog" NavigateUrl="~/Item.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="AddProductBackLogItem" Value="AddProductBackLogItem"></asp:MenuItem>
+                        <asp:MenuItem Text="Release BackLog" Value="Release BackLog"></asp:MenuItem>
+                        <asp:MenuItem Text="Increment Plan" Value="Increment Plan"></asp:MenuItem>
+                        <asp:MenuItem Text="Impediment" Value="Impediment"></asp:MenuItem>
+                        <asp:MenuItem Text="Improvement" Value="Improvement"></asp:MenuItem>
+                        <asp:MenuItem Text="User Story" Value="User Story"></asp:MenuItem>
+                        <asp:MenuItem Text="Meeting Calender" Value="Meeting Calender"></asp:MenuItem>
+<asp:MenuItem Text="BurnDowns" Value="BurnDowns"></asp:MenuItem>
+                        <asp:MenuItem Text="Daily Scrum Meeting" Value="Daily Scrum Meeting"></asp:MenuItem>
+                        <asp:MenuItem Text="Sprint Planning Meeting I" Value="Sprint Planning Meeting I"></asp:MenuItem>
+                        <asp:MenuItem Text="Sprint Planning Meeting II" Value="Sprint Planning Meeting II"></asp:MenuItem>
+                        <asp:MenuItem Text="Sprint Review Meeting" Value="Sprint Review Meeting"></asp:MenuItem>
+                        <asp:MenuItem Text="Sprint Retrospective Meeting" Value="Sprint Retrospective Meeting"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+<div id="accordion">
+    <h3>Course Page</h3>
+    <div>
+<a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/Content_Sep2012.htm">Course Page</a>
+    </div>
+	    <h3>Moodle</h3>
+    <div>
+<a href="https://elearn.haaga-helia.fi/moodle/login/index.php">Moodle</a>
+    </div>
+	<h3>MyNet</h3>
+	<div>
+	<a href="https://mynet.haaga-helia.fi//en/Pages/default.aspx">MyNet</a>
+	</div>
+	<h3>Winha Ville</h3>
+	<div>
+	<a href="https://wille.haaga-helia.fi/winhawille/elogon.asp">Winha Ville</a> 
+	</div>
+	<h3>School Library</h3>
+	<div>
+	<a href="http://www.haaga-helia.fi/en/services-and-cooperation/library">School Library</a>
+	</div>
+	</div>
+	<div>
+	<div id="NavMenu">
+<ul id ="NavMenu">
+<li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/ClassSchedule.htm" title="The regular time table for the course and the room can be found in here">Class Schedules</li></a>
+<li><a href="#" title="you will find all the weekly lectured slides in this section">Weekly Lecture Slides</a>
+<span class="darrow">&#9660;</span>
+    <ul class="sub1">
+	 <li><a href="#">Week01 Lectures</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week01/1_Theory/AWT_xml_1.pdf">Introduction To XML</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week01/1_Theory/AWT_xml_2.pdf">XML Entities and DTD</a></li>
+                             </ul>
+				</li>  
+<li><a href="#">Week02 Lectures</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week02/1_Theory/AWT_xml_3.pdf">XML Entities</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week02/1_Theory/AWT_xml_validation.pdf">XML Documents</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week03 Lectures</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week03/1_Theory/3a_AWT_xml_Namespaces.ppt">XML Namespaces</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week03/1_Theory/3b_AWT_xml_Infoset.ppt">XML Infoset</a></li>
+					  <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week03/1_Theory/3b_AWT_xml_Infoset.ppt">XML Infoset Continued...</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week04 Lectures</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week04/1_Theory/AWT_XSLT.pdf">XSLT</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week04/1_Theory/AWT_XSLT_Demo.pdf">XSLT in Detail</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week05 Lectures</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week05/1_Theory/AWT_XSLT_Executing1.pdf">XSLT Continued...</a></li>
+                             </ul>
+				</li> 
+<span class="rarrow">&#9654;</span>				
+<li><a href="#">Week06 Lectures</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week06/1_Theory/AWT_xml_schema.pdf">XML Schema</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week07 Lectures</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week07/1_Theory/AWT_xml_schema_types.pdf">Schema Types</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week08 Lectures</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Week09%20-%20Web%20services/1_Theory/1_WebServiceServer.ppt">Web Service Server</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Week09%20-%20Web%20services/1_Theory/2_WebServiceClient2.ppt">Web Service Client</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week09 Lectures</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Week10%20-%20web%20services%20contnd/1_Theory/WebService_en.ppt">Web Service Continued...</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week10 Lectures</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Weeks11_12%20-%20soa/1_Theory/4_SOA1.ppt">Service Oriented Architecture</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week11 Lectures</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Week14_JavaScript/1_Theory/JavaScript-en.ppt">Introduction To JavaScript</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Week14_JavaScript/1_Theory/JavaScript-en.ppt">Introduction To HTML5/CSS3</a></li>
+                             </ul>
+				</li> 						
+							 
+<li><a href="#">Week12 Lectures</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Week15b_AJAX/1_Theory/Ajax.pdf">Introduction To AJAX</a></li>
+                             </ul>
+				</li> 		      
+				</li>						  
+    </ul>
+	</li>
+<li><a href="#" title="you will find all the home assignments in this section,just hover over this link and all the weekly home assignments will appear in a chronological order">Home Assignments</a>
+<span class="darrow">&#9660;</span>
+    <ul class="sub1">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week01/4_HomeAssignments/Week_1.pdf">Week01</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week02/4_HomeAssignments/Week_2.pdf">Week02</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week03/4_HomeAssignments/Week_3.doc">Week03</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week06/4_HomeAssignments/Week_6.pdf">Week04</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Week09%20-%20Web%20services/4_HomeAssignments/Week_09.pdf">Week05</a></li>
+                <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Week10%20-%20web%20services%20contnd/">Week06</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week01/3_LabExercises/Exercise_1.pdf">Week07</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week02/3_LabExercises/Exercise_2.pdf">Week08</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week04/3_LabExercises/Exercise_4.pdf">Week09</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week06/3_LabExercises/Exercise_6.pdf">Week10</a></li>
+				      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week07/3_LabExercises/Exercise_7.pdf">Week11</a></li>
+				      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Weeks11_12%20-%20soa/4_HomeAssignments/Week12_Home_Assignment.docx">Week12</a></li>
+					 <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week07/3_LabExercises/Exercise_7.pdf">Week13</a></li>
+                             </ul>
+				</li>
+				
+									  
+    </ul>
+	</li>
+<li><a href="#" title="you will find all the weekly Lab Exercises in this section">Lab Exercises</a>
+<span class="darrow">&#9660;</span>
+    <ul class="sub1">
+	 <li><a href="#">Week01 Lab Exercises</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week01/3_LabExercises/Exercise_1.pdf">Lab Exercises 1</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week01/2_Demos/WeeklyDemoWebSite.zip">XML Demo-Week1</a></li>
+                             </ul>
+				</li>  
+<li><a href="#">Week02 Lab Exercises</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week02/3_LabExercises/Exercise_2.pdf">Lab Exercises 2</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week02/2_Demos/WeeklyDemoWebSite.zip">XML Demo-Week2</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week03 Lab Exercises</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week03/3_LabExercises/Exercise_3.doc">Lab Exercises 3</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week03/2_Demos/WeeklyDemoWebSite.zip">XML Demo-Week3</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week04 Lab Exercises</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week04/3_LabExercises/Exercise_4.pdf">Lab Exercises 4</a></li>
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week04/2_Demos/WeeklyDemoWebSite.zip">XML Demo-Week4</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week05 Lab Exercises</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week05/3_LabExercises/AttendanceCase/AttendanceCase.zip">Lab Exercises 5</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week06 Lab Exercises</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week06/3_LabExercises/Exercise_6.pdf">Lab Exercises 6</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week07 Lab Exercises</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week07/3_LabExercises/Exercise_7.pdf">Lab Exercise 7</a></li>
+					  <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_I_XML/Week04/2_Demos/WeeklyDemoWebSite.zip">XML Demo-Week7</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week09 Lab Exercises</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Week09%20-%20Web%20services/3_LabExercises/Exercise_9.pdf">Lab Exercises 8</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week09 Lab Exercise</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Week10%20-%20web%20services%20contnd/3_LabExercises/Exercise_%2010.doc">Lab Exercises 9</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week10 Lab Exercises</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Week10%20-%20web%20services%20contnd/3_LabExercises/Exercise_%2010.doc">Lab Exercises 10</a></li>
+                             </ul>
+				</li> 		
+<li><a href="#">Week11 Lab Exercises</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Week14_JavaScript/3_LabExercises/Exercise_%2014_JavaScript.doc">Lab Exercises 11</a></li>
+                             </ul>
+				</li> 						
+							 
+<li><a href="#">Week12 Lab Exercises</a>
+				<span class="rarrow">&#9654;</span>
+			                 <ul class="sub2">
+                      <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Week15b_AJAX/3_LabExercises/AJAX.zip">Demo</a></li>
+					  <li><a href="http://myy.haaga-helia.fi/~bit2007/itp4tf014/public/Part_II_WebServices/Week15b_AJAX/3_LabExercises/Service.zip">Optional Lab Exercise</a></li>
+                             </ul>
+				</li> 		      
+				</li>							  
+    </ul>
+	<li><a href ="http://www.w3.org/" title="You will find important video tutorials and plain text explanations of various concepts related to this course in here">Important Links</a>
+<span class="darrow">&#9660;</span>
+                      <ul class="sub1">
+                      <li><a href="http://thenewboston.org/">The New Boston </a></li>
+                      <li><a href="http://www.w3schools.com/">W3Schools</a></li>
+                      <li><a href="http://www.tizag.com/">Tizag</a></li>
+                      <li><a href="http://www.udemy.com/">Udemy</a></li>
+                      </ul>
+</li>
+	<li><a href="https://elearn.haaga-helia.fi/moodle/login/index.php" title="you can view your exam results in here">Exam Results</a></li>
+	<li><a href="http://www.haaga-helia.fi/en/about-haaga-helia/contact-information"  title="Send email to amir.dirin@haaga-helia.fi,if you have questions,suggestions,comments or recommendations ">Contact Information</a></li>
+</ul>
+</div>
+	</div>
+<img id="Tsegesh" src="tsegesh.jpg" alt="Haaga-Helia Logo">
+</div>
+</body>
+</html>
